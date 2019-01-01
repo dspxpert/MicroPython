@@ -1,27 +1,27 @@
 # MicroPython
 MicroPython Projects
 
-1. Firmware Flashing
-esptool -p COMxx erase_flash
+1. Firmware Flashing<br>
+esptool -p COMxx erase_flash<br><br>
 
-esptool -p COMxx write_flash 0 firmware.bin (for ESP8266)
-esptool -p COMxx write_flash -z 0x1000 firmware.bin (for ESP32)
-
-2. Network Connection
-main.py
-import os, time, network
-def network_setup():
-    sta_if = network.WLAN(network.STA_IF)
-    sta_if.active(True)
-    if not sta_if.isconnected():
-        print('Connecting to Network...')
-        sta_if.connect('freecafe_02', 'freecafe00')
-        while not sta_if.isconnected():
-            pass
-    print('Network Config:', sta_if.ifconfig())
-
-3. Setup WebREPL
-import webrepl_setup
-
-4. MQTT example
+esptool -p COMxx write_flash 0 firmware.bin (for ESP8266)<br>
+esptool -p COMxx write_flash -z 0x1000 firmware.bin (for ESP32)<br>
+<br>
+2. Network Connection<br>
+main.py<br>
+import os, time, network<br>
+def network_setup():<br>
+    sta_if = network.WLAN(network.STA_IF)<br>
+    sta_if.active(True)<br>
+    if not sta_if.isconnected():<br>
+        print('Connecting to Network...')<br>
+        sta_if.connect('freecafe_02', 'freecafe00')<br>
+        while not sta_if.isconnected():<br>
+            pass<br>
+    print('Network Config:', sta_if.ifconfig())<br>
+<br>
+3. Setup WebREPL<br>
+import webrepl_setup<br>
+<br>
+4. MQTT example<br>
 
