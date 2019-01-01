@@ -21,7 +21,7 @@ PUB_TOPIC = b'button'
 SUB_TOPIC = b'led'
 
 led = Pin(2, Pin.OUT, value=0)
-state = 0
+state = 1
 
 def sub_cb(topic, msg):
     global state, led
