@@ -20,18 +20,21 @@ CLIENT_ID = 'ESP8266_Sensor'
 PUB_TOPIC = b'button'
 SUB_TOPIC = b'led'
 
-led = Pin(2, Pin.OUT, value=0)
+# WeMos D1-mini Built-in LED(GPIO2) active low
+# default off == 1 (initial state)
+
+led = Pin(2, Pin.OUT, value=1)
 state = 0
 
 def sub_cb(topic, msg):
     global state, led
     print((topic, msg))
     if msg == b"on":
-        led.value(1)
-        state = 0
-    elif msg == b"off":
         led.value(0)
         state = 1
+    elif msg == b"off":
+        led.value(1)
+        state = 0
     elif msg == b"toggle":
         # LED is inversed, so setting it to current state
         # value will make it toggle
