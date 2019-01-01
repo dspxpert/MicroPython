@@ -1,11 +1,11 @@
 # MicroPython
 MicroPython Projects
 
->1. Firmware Flashing
->esptool -p COMxx erase_flash
+>1. Firmware Flashing<br>
+>esptool -p COMxx erase_flash<br>
 >
->esptool -p COMxx write_flash 0 firmware.bin (for ESP8266)
->esptool -p COMxx write_flash -z 0x1000 firmware.bin (for ESP32)
+>esptool -p COMxx write_flash 0 firmware.bin (for ESP8266)<br>
+>esptool -p COMxx write_flash -z 0x1000 firmware.bin (for ESP32)<br>
 >
 >2. Network Connection
 >main.py
